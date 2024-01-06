@@ -27,7 +27,6 @@ if(n<=1) return dp[n]=n;
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 
-
 // error - dp not declared in scope;
 
 #include <bits/stdc++.h>
@@ -51,8 +50,6 @@ return 0;
 
 
 
-//////
-
 #include <bits/stdc++.h>                 //## Approach
 using namespace std;
 
@@ -72,12 +69,7 @@ memset(dp,-1,sizeof(dp));
 cout << fib(n,dp);
 return 0;
 }
-
-
-
-
-//###
-                                                  //      USING VECTOR
+   //      USING VECTOR
 
 
 #include <bits/stdc++.h>                
@@ -137,9 +129,6 @@ return 0;
 // S.C. = 0(N) ( array )
 
 
-
-/// ###
-
 #include <bits/stdc++.h>                
 using namespace std;
 
@@ -168,7 +157,7 @@ return 0;
 
 
 
-
+########################################################################################################################################################################################################################################################################################################################
 
 
 
@@ -184,9 +173,10 @@ public:
            return fib(n-1)+fib(n-2);
         }
 
-  };
-    
+  }; 
 // T.C. = O(2^N) S.C.= O(N)   overlapping subproblems -> solution memorization 
+
+
     int f(int n, vector<int>&dp)
     {
         if(n<=1) return n;
@@ -199,6 +189,8 @@ public:
     }
 };
 //T.C. = O(N) S.C.= O(N)+ O(N)  recursive stack space + dp space -> solution  tabulation
+
+
   int f(int n, vector<int>&dp) 
     {
       dp[0]=0 ; dp[1]=1;
@@ -213,6 +205,8 @@ public:
     }
 }; 
 // T.C. = O(N) S.C. = O(N)   dp space -> solution  space optimize 
+
+
     int fib(int n){
        int  prev2=0 , prev1=1;
        if(n==0) return 0;
