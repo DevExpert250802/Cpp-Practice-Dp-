@@ -75,8 +75,10 @@ bool subsetSumToK(int n, int k, vector<int> &arr) {
     for (int i = 0; i < n; i++)
         dp[i][0] = true;
 
-    // If the first element of the array equals the required sum, it's possible to achieve it.
+    // Base case: If the first element of 'arr' is less than or equal to 'k', set dp[0][arr[0]] to true
+    if (arr[0] <= k) {
         dp[0][arr[0]] = true;
+    }
 
     for (int i = 1; i < n; i++) {
         for (int j = 1; j <= k; j++) {
