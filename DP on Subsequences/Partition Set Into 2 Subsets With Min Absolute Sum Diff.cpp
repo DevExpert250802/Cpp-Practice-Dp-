@@ -43,7 +43,8 @@ int minSubsetSumDifference(vector < int > & arr, int n) {
 
 
 
-
+Time Complexity: O(N*totSum) +O(N) +O(N)
+Space Complexity: O(N*totSum) + O(N)
 
 
 
@@ -80,7 +81,8 @@ int minSubsetSumDifference(vector<int>& arr, int n)
 
 
 
-
+Time Complexity: O(N*totSum) +O(N) +O(N)
+Space Complexity: O(totSum)
 
 
 
@@ -122,3 +124,55 @@ int minSubsetSumDifference(vector<int>& arr, int n)
   }
   return mini;
 }
+
+
+
+
+
+Time Complexity: O(N*totSum) +O(N) +O(N)
+Space Complexity: O(N*totSum)
+
+
+
+
+
+
+
+int minSubsetSumDifference(vector<int>& arr, int n){
+    int totSum = accumulate(arr.begin(), arr.end(), 0);
+    int target = totSum / 2;
+        vector < bool > prev(totSum + 1, false),cur(totSum + 1, false);
+
+  prev[0] = true;
+
+  if (arr[0] <= totSum)
+    prev[arr[0]] = true;
+
+  for (int ind = 1; ind < n; ind++) {
+    cur[0] = true;
+    for (int target = 1; target <= totSum; target++) {
+      bool notTaken = prev[target];
+
+      bool taken = false;
+      if (arr[ind] <= target)
+        taken = prev[target - arr[ind]];
+
+      cur[target] = notTaken || taken;
+    }
+    prev = cur;
+  }
+
+  int mini = 1e9;
+  for (int i = 0; i <= totSum/2; i++) {
+    if (prev[i] == true) {
+      int diff = abs(i - (totSum - i));
+      mini = min(mini, diff);
+    }
+  }
+  return mini;
+}
+
+
+
+Time Complexity: O(n * total sum/2) +O(N) +O(N)
+Space Complexity: O(total sum/2)
