@@ -133,14 +133,14 @@ public:
             }
         }
 
-        // Return the minimum flips needed starting with previous value 0
+        // Return the minimum flips needed starting with the previous value 0
         return dp[0][0];
     }
 };
 
 
 
-//Approach-5 (Space Optimized) 
+//Approach-4 (Space Optimized) 
 //T.C : O(n*n)
 //S.C : O(4)
 
@@ -178,7 +178,7 @@ public:
             }
             ahead=cur;
         }
-        // Return the minimum flips needed starting with previous value 0
+        // Return the minimum flips needed starting with the previous value of 0
         return ahead[0];
     }
 };
@@ -190,7 +190,7 @@ public:
 
 
 
-//Approach-4 (Constant Space)
+//Approach-5 (Constant Space)
 //T.C : O(n)
 //S.C :O(1)
 
