@@ -36,7 +36,7 @@ public:
 
 
 
-//Approach-2 (Using Recrusion + Memoization) -> Why DP ? (See my video above)
+//Approach-2 (Using Recrusion + Memoization) 
 //T.C : O(n*n)
 //S.C : O(n*n) + O(n)
 
@@ -112,7 +112,9 @@ public:
 
 
 
-//Approach-5 (Space Optimized) 
+
+
+//Approach-4 (Space Optimized) 
 //T.C : O(n*n)
 //S.C : O(n)
 
@@ -144,6 +146,10 @@ public:
         return ahead[0];
     }
 };
+
+
+
+
 
 //Approach-5 (Using two Stacks) - No DP required
 //T.C : O(n)
@@ -186,10 +192,12 @@ public:
 };
 
 
-//Approach-4 (Constant Space)
+
+
+//Approach-6 (Constant Space)
 //T.C : O(n)
 //S.C :O(1)
-//NOTE: You can easily combine both loops in just a single for loop. I have written them separately for the sake of simplicity and understanding
+//NOTE: You can easily combine both loops in just a single for loop.
 class Solution {
 public:
     bool checkValidString(string s) {
