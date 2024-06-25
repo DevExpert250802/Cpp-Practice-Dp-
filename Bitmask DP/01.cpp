@@ -104,7 +104,8 @@ int f(int i, int mask, int n, int m,  vector<vector<int>>& happy, vector<vector<
     for (int j = 0; j<n; j++) {
         
         if ((mask & (1 << j)) == 0) {
-            ans = max(ans,  happy[i][j] + f(i+1, mask | (1 << j), n, m,happy,dp ));
+            int temp =  happy[i][j] + f(i+1, mask | (1 << j), n, m,happy,dp );
+            ans = max(ans,temp);
         }
     }
     return dp[i][mask] = ans;
