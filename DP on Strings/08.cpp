@@ -1,5 +1,4 @@
-Shortest Common Supersequence 
-
+Shortest Common Supersequence
 
 
 
