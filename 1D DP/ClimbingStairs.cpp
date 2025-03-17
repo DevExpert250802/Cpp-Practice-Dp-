@@ -59,18 +59,18 @@ public:
 
 class Solution {
 public:
-	int climbStairs(int n) {
-	//	if(n==0)return 1;
-	//	if(n==1)return 1;
-		int prev=1, prev2=1;
-		for(int i=2; i<=n; i++){
-			int curr = prev + prev2;
-			prev2 =prev; prev=curr;
-		}
-		return prev;
-	}
-
-}; 
+    int climbStairs(int n) {
+        if(n==1)return 1;
+        vector<int>dp(n+1,0);
+        int prev2=1,prev1=2;
+        for(int i=3;i<=n;i++){
+           int curr=prev1+prev2;
+           prev2=prev1;
+           prev1=curr;
+        }
+        return prev1;
+    }
+};
 
 
 /* T.C. = O(N) S.C.= O(1)    */
