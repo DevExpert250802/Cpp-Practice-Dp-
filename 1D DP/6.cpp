@@ -157,7 +157,7 @@ class Solution {
 public:
     bool canCross(vector<int>& stones) {
         unordered_map<int, unordered_set<int>> mp;
-        for (int stone : stones) mp[stone] = unordered_set<int>();
+        for (int stone : stones) mp[stone] = {};
         mp[stones[0]].insert(0);
         for (int stone : stones) {     
             for (int k : mp[stone]) {
